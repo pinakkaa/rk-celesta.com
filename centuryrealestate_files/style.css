@@ -1750,7 +1750,7 @@ font-family: "corporate_sregular", Verdana, Geneva, Tahoma, sans-serif;
     letter-spacing: 4px;
 }
 .enquiry__form .search__box:before {
-    content: "";
+    /* content: ""; */
     position: absolute;
     top: 17px;
     left: 10px;
@@ -1761,9 +1761,10 @@ font-family: "corporate_sregular", Verdana, Geneva, Tahoma, sans-serif;
     border-left: 7px solid #0000;
     border-right: 7px solid #0000;
     border-bottom: 7px solid #fff;
+    display: none;
 }
 .enquiry__form .search__box:after {
-    content: "";
+    /* content: ""; */
     position: absolute;
     top: 29px;
     left: 10px;
@@ -1774,6 +1775,7 @@ font-family: "corporate_sregular", Verdana, Geneva, Tahoma, sans-serif;
     border-left: 7px solid #0000;
     border-right: 7px solid #0000;
     border-top: 7px solid #fff;
+    display: none;
 }
 .enquiry__form .form-control {
     color: rgba(255, 255, 255, 0.5);
