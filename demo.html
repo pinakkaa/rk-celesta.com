@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+
+            .open-popup-btn {
+                padding: 14px 38px;
+                background: #b77758;
+                border: none;
+                color: #fff;
+                font-size: 16px;
+                letter-spacing: 1px;
+                cursor: pointer;
+                transition: 0.3s ease;
+            }
+
+            .open-popup-btn:hover {
+                background: #9e6348;
+            }
+
+
+            .custom-popup-overlay {
+                position: fixed;
+                inset: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.45);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 9999;
+
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.4s ease;
+            }
+
+
+            /* ACTIVE POPUP */
+
+            .custom-popup-overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+
+            .custom-popup {
+                width: 92%;
+                max-width: 1050px;
+                background: rgba(255, 255, 255, 0.18);
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+
+                border: 1px solid rgba(255, 255, 255, 0.35);
+                border-radius: 10px;
+
+                padding: 60px 70px;
+                position: relative;
+            }
+
+            .close-popup-btn {
+                position: absolute;
+                top: 15px;
+                right: 22px;
+                background: transparent;
+                border: none;
+                font-size: 42px;
+                line-height: 1;
+                cursor: pointer;
+                color: #111;
+            }
+
+
+            .popup-title-wrapper {
+                text-align: center;
+                margin-bottom: 55px;
+            }
+
+            .popup-title {
+                font-size: 34px;
+                font-weight: 300;
+                letter-spacing: 8px;
+                color: #222;
+            }
+
+
+
+            .input-group {
+                width: 100%;
+                margin-bottom: 38px;
+            }
+
+            .custom-input {
+                width: 100%;
+                background: transparent;
+                border: none;
+                border-bottom: 1px solid #555;
+                outline: none;
+
+                padding: 0 0 14px;
+                font-size: 20px;
+                color: #222;
+            }
+
+
+            .custom-input::placeholder {
+                color: #333;
+                letter-spacing: 1px;
+            }
+
+
+            .custom-input:focus {
+                border-color: #000;
+            }
+
+
+            /* SELECT */
+
+            select.custom-input {
+                appearance: none;
+                cursor: pointer;
+            }
+
+
+            /* MOBILE ROW */
+
+            .mobile-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 28px;
+            }
+
+            .submit-wrapper {
+                text-align: center;
+                margin-top: 25px;
+            }
+
+            .submit-btn {
+                width: 220px;
+                height: 60px;
+                border: none;
+                background: #b77758;
+                color: #fff;
+                font-size: 24px;
+                letter-spacing: 1px;
+                cursor: pointer;
+                transition: 0.3s ease;
+            }
+
+            .submit-btn:hover {
+                background: #9f6549;
+            }
+
+
+
+            @media(max-width:991px) {
+
+                .custom-popup {
+                    padding: 50px 40px;
+                }
+
+                .popup-title {
+                    font-size: 28px;
+                    letter-spacing: 5px;
+                }
+
+                .custom-input {
+                    font-size: 18px;
+                }
+            }
+
+
+
+            @media(max-width:767px) {
+
+                .custom-popup {
+                    width: 94%;
+                    padding: 45px 24px;
+                }
+
+                .popup-title-wrapper {
+                    margin-bottom: 40px;
+                }
+
+                .popup-title {
+                    font-size: 22px;
+                    letter-spacing: 4px;
+                }
+
+                .mobile-row {
+                    grid-template-columns: 1fr;
+                    gap: 0;
+                }
+
+                .input-group {
+                    margin-bottom: 28px;
+                }
+
+                .custom-input {
+                    font-size: 16px;
+                    padding-bottom: 12px;
+                }
+
+                .submit-btn {
+                    width: 100%;
+                    height: 54px;
+                    font-size: 18px;
+                }
+
+                .close-popup-btn {
+                    font-size: 34px;
+                    top: 10px;
+                    right: 15px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <!-- ENQUIRE BUTTON -->
+        <button class="open-popup-btn" id="openPopupBtn">
+            Enquire Now
+        </button>
+
+
+        <!-- POPUP -->
+        <div class="custom-popup-overlay" id="popupOverlay">
+
+            <div
+                class="custom-popup">
+
+                <!-- CLOSE BUTTON -->
+                <button class="close-popup-btn" id="closePopupBtn">
+                    &times;
+                </button>
+
+
+                <!-- FORM -->
+                <form class="enquiry-form" autocomplete="off" action="https://emailjsfuntions-428145106157.asia-south1.run.app/rk-celesta-popup-form" method="POST">
+
+                    <input type="hidden" name="_token" value="YCWDf9CnRWTg9q6xE5lV51iuBS3kLJbAw4d5LRRu">
+
+                    <input
+                    type="hidden" name="enquiry_form_name" value="Needs3 Footer Form">
+
+
+                    <!-- TITLE -->
+                    <div class="popup-title-wrapper">
+                        <h2 class="popup-title">ENQUIRE NOW</h2>
+                    </div>
+
+
+                    <!-- NAME -->
+                    <div class="input-group">
+                        <input type="text" class="custom-input enquiry_name" name="enquiry_name" placeholder="Full Name*" required>
+                    </div>
+
+
+                    <!-- EMAIL -->
+                    <div class="input-group">
+                        <input type="email" class="custom-input enquiry_email_id" name="enquiry_email_id" placeholder="Email*" required>
+                    </div>
+
+
+                    <!-- MOBILE ROW -->
+                    <div
+                        class="mobile-row">
+
+                        <!-- COUNTRY -->
+                        <div class="input-group">
+                            <select class="custom-input enquiry_isd_code" name="enquiry_isd_code" required>
+
+                                <option value="91" selected>India (+91)</option>
+                                <option value="1">United States (+1)</option>
+                                <option value="44">United Kingdom (+44)</option>
+                                <option value="61">Australia (+61)</option>
+                                <option value="971">UAE (+971)</option>
+
+                            </select>
+                        </div>
+
+
+                        <!-- MOBILE -->
+                        <div class="input-group">
+                            <input type="text" class="custom-input enquiry_mobile_number" name="enquiry_mobile_number" placeholder="Mobile Number*" required>
+                        </div>
+
+                    </div>
+
+
+                    <!-- MESSAGE -->
+                    <div class="input-group">
+                        <input type="text" class="custom-input enquiry_comments" name="enquiry_comments" placeholder="Type Your Query">
+                    </div>
+
+
+                    <!-- SUBMIT -->
+                    <div class="submit-wrapper">
+                        <button type="submit" class="submit-btn">
+                            SUBMIT
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+        <script>
+            // OPEN POPUP
+            const openPopupBtn = document.getElementById("openPopupBtn");
+            const popupOverlay = document.getElementById("popupOverlay");
+            const closePopupBtn = document.getElementById("closePopupBtn");
+
+            openPopupBtn.addEventListener("click", () => {
+                popupOverlay.classList.add("active");
+            });
+
+
+            // CLOSE POPUP
+            closePopupBtn.addEventListener("click", () => {
+                popupOverlay.classList.remove("active");
+            });
+
+
+            // CLOSE WHEN CLICKING OUTSIDE
+            popupOverlay.addEventListener("click", (e) => {
+                if (e.target === popupOverlay) {
+                    popupOverlay.classList.remove("active");
+                }
+            });
+        </script>
+    </body>
+</html>
