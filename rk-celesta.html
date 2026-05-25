@@ -1034,7 +1034,7 @@
             width: 50px;
             height: 50px;
             background-color: transparent;
-            border: 2px solid #333;
+            /* border: 2px solid #333; */
             border-radius: 4px;
             color: #333;
             font-size: 1.3rem;
@@ -2453,6 +2453,59 @@
                     justify-content: center;
                     align-items: center;
                 }
+.footer-icons{
+    height: 38px;
+    width: 38px;
+}
+      .scroll-to-top {
+        width: 50px;
+        height: 50px;
+        /* background: #1a1a1a; */
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition:
+          opacity 0.35s ease,
+          visibility 0.35s ease,
+          transform 0.35s ease,
+          background 0.3s ease;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+        position: absolute;
+        bottom: 0;
+        left: -4rem;
+        border: 1px solid rgba(0, 128, 0, 0.537);
+      }
+
+      .scroll-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .scroll-to-top:hover {
+        background: #b57255;
+        box-shadow: 0 6px 22px rgba(181, 114, 85, 0.45);
+      }
+
+      .scroll-to-top svg {
+        width: 20px;
+        height: 20px;
+        display: block;
+      }
+    .rera-number-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        padding: 2rem 0;
+        background-color: #f6f6f6;
+    }
             </style>
 </head>
 
@@ -2469,10 +2522,16 @@
         </svg>
     </a> -->
     <div class="bottom-right-links-wrapper">
-        <a href="https://wa.me/919606022275" target="_blank"><img src="./icons/whatsapp.png" alt="" class="floating-icons"></a>
-        <a href="tel:+919606022275"><img src="./icons/phone-call.png" alt="" class="floating-icons"></a>
-        <!-- <a href=""><img src="./icons/up-arrow.png" alt="" class="floating-icons"></a> -->
-    </div>
+        <div class="scroll-to-top" id="scrollToTop">
+          <img src="./icons/upward-arrow.png" alt="up arrow" class="floating-icons">
+        </div>
+        <a href="https://wa.me/919606022275" target="_blank">
+          <img src="./icons/whatsapp.png" alt="WhatsApp" class="floating-icons" />
+        </a>
+        <a href="tel:+919606022275">
+          <img src="./icons/phone-call.png" alt="Call" class="floating-icons" />
+        </a>
+      </div>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX6VW9QG" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -2532,8 +2591,8 @@
 
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="d-banner" src="./assets/Images/microsite banner 1.png" alt="banner" style="width: 100%; margin-top:-11px !important;">
-                    <img class="m-banner" src="./assets/Images/microsite banner 1.png" alt="banner" style="width: 100%">
+                    <img class="d-banner" src="./project_files/microsite-banner.png" alt="banner" style="width: 100%; margin-top:-11px !important;">
+                    <img class="m-banner" src="./project_files/microsite-banner.png" alt="banner" style="width: 100%">
                 </div>
                 <div class="item">
                     <img class="d-banner" src="./assets/Images/microsite banner 2.png" alt="banner" style="width: 100%; margin-top:-11px !important;">
@@ -2994,6 +3053,8 @@
                                 <li>Landscaped gardens</li>
                                 <li>Jogging Track</li>
                                 <li>Dedicated kids’ play area</li>
+                                <li>Infinity Pool</li>
+                                <li>EV Charging Points</li>
                             </ul>
                         </div>
                     </div>
@@ -3017,6 +3078,14 @@
                             <div class="item next left">
                                 <img class="d-banner" src="./assets/Images/ameneties-2.png" alt="banner" style="width: 100%; margin-top:-11px !important;">
                                 <img class="m-banner" src="./assets/Images/ameneties-2.png" alt="banner" style="width: 100%">
+                            </div>
+                            <div class="item next left">
+                                <img class="d-banner" src="./project_files/ev.png" alt="banner" style="width: 100%; margin-top:-11px !important;">
+                                <img class="m-banner" src="./project_files/ev.png" alt="banner" style="width: 100%">
+                            </div>
+                            <div class="item next left">
+                                <img class="d-banner" src="./project_files/swimming pool.png" alt="banner" style="width: 100%; margin-top:-11px !important;">
+                                <img class="m-banner" src="./project_files/swimming pool.png" alt="banner" style="width: 100%">
                             </div>
 
                             <div class="item">
@@ -4925,6 +4994,7 @@
 
     <footer
     class="container-fluid footer" data-scroll-offset="5%" data-scroll-repeat="" data-scroll="" data-scroll-class="inView"> <!-- <span class="awards-footer"><img src="./project_files/gptw-certification-badge-2025.svg" alt="Great place to work" class="img-fluid" width="96" height="164"></span> -->
+    <div class="rera-number-wrapper">RERA : PRM/KA/RERA/1251/308/PR/271023/006349.</div>
     <div class=" row custom-row footer__top align-items-center">
         <div class=" col-sm-12 col-md-3">
             <a href="./index.html" class="footer__top__logo">
@@ -4945,24 +5015,21 @@
         <div class=" col-sm-12 col-md-3">
             <div class="footer__top__social">
                 <ul class="social-icons">
-                    <li>
-                        <a href="https://www.facebook.com/profile.php?id=61573317630825" target="_blank">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="" target="_blank">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                    </li>
-
-
-                    <!-- <li>
-                        <a href="https://www.linkedin.com/company/needs3-projects-168/" target="_blank">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                    </li> -->
+                    <li><a href="" target="_blank">
+                        <!-- <i class="bi bi-facebook"></i> -->
+                         <img src="./icons/facebook.png" alt="" class="footer-icons">
+                    </a></li>
+                
+                    <li><a href="" target="_blank">
+                        <!-- <i class="bi bi-instagram"></i> -->
+                         <img src="./icons/instagram.png" alt="" class="footer-icons">
+                    </a></li>
+                
+                
+                    <li><a href="" target="_blank">
+                        <!-- <i class="bi bi-linkedin"></i> -->
+                         <img src="./icons/linkedin.png" alt="" class="footer-icons">
+                    </a></li>
                 </ul>
 
             </div>
@@ -7084,4 +7151,24 @@ popupOverlay.addEventListener("click", (e) => {
     document.addEventListener('DOMContentLoaded', () => {
         new PremiumGallerySlider();
     });
-</script></body></html>
+</script>
+
+<script>
+    (function () {
+      const btn = document.getElementById("scrollToTop");
+
+      window.addEventListener("scroll", function () {
+        const scrollY = window.scrollY;
+        if (scrollY > 100) {
+          btn.classList.add("visible");
+        } else {
+          btn.classList.remove("visible");
+        }
+      });
+
+      btn.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    })();
+  </script>
+  </body></html>

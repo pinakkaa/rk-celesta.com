@@ -1012,7 +1012,7 @@ header.white .nav ul li a.enquire {
     max-width: 5rem;
 }
 .footer__top {
-    padding-top: 4rem;
+    /* padding-top: 4rem; */
     padding-bottom: 4rem;
     background-color: #f6f6f6;
 }
