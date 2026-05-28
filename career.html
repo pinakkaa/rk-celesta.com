@@ -767,6 +767,85 @@ html, body {
         padding: 2rem 0;
         background-color: #f6f6f6;
     }
+        .appointment-input-wrapper {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .appointment-input-wrapper input,
+        .appointment-input-wrapper select {
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .appointment-input-wrapper {
+                flex-direction: column;
+            }
+        }
+        .footer-form-input,
+        .footer-form-input option {
+            color: #000;
+        }
+        select.footer-form-input {
+            color: #666;
+        }
+
+        select.footer-form-input:valid {
+            color: #000;
+        }
+        .custom-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: #666;
+  background-color: #fff;
+  user-select: none;
+}
+
+.custom-select-trigger.selected {
+  color: #000;
+}
+
+.custom-select-arrow {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.custom-select-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #000;
+  z-index: 9999;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.custom-select-dropdown.open {
+  display: block;
+}
+
+.custom-select-option {
+  padding: 0.5rem 1rem;
+  font-size: 0.55rem;
+  color: #000;
+  cursor: pointer;
+  font-family: "Quicksand", sans-serif;
+}
+
+.custom-select-option:hover {
+  background-color: #f0e8df;
+  color: #000;
+}
 
         </style>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -1174,6 +1253,37 @@ html, body {
                               class="footer-form-input phone-number-input"
                               required
                             />
+                          </div>
+                          <!-- Replace your preferredTime select with this -->
+                          <div class="appointment-input-wrapper">
+                            <!-- Date input stays as native (browsers handle it well) -->
+                            <input
+                              type="date"
+                              name="preferredDate"
+                              class="footer-form-input"
+                              id="preferredDate"
+                              required
+                            />
+                          
+                            <!-- Custom dropdown replaces only the time select -->
+                            <div class="custom-select-wrapper">
+                              <div class="custom-select-trigger footer-form-input" id="timingTrigger">
+                                <span class="custom-select-placeholder">Preferred Timing</span>
+                                <span class="custom-select-arrow">&#8964;</span>
+                              </div>
+                              <div class="custom-select-dropdown" id="timingDropdown">
+                                <div class="custom-select-option" data-value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</div>
+                                <div class="custom-select-option" data-value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</div>
+                                <div class="custom-select-option" data-value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</div>
+                                <div class="custom-select-option" data-value="12:00 PM - 01:00 PM">12:00 PM - 01:00 PM</div>
+                                <div class="custom-select-option" data-value="01:00 PM - 02:00 PM">01:00 PM - 02:00 PM</div>
+                                <div class="custom-select-option" data-value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</div>
+                                <div class="custom-select-option" data-value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM</div>
+                                <div class="custom-select-option" data-value="04:00 PM - 05:00 PM">04:00 PM - 05:00 PM</div>
+                                <div class="custom-select-option" data-value="05:00 PM - 06:00 PM">05:00 PM - 06:00 PM</div>
+                              </div>
+                              <input type="hidden" name="preferredTime" id="preferredTimeValue" required />
+                            </div>
                           </div>
             
                           <input
@@ -1591,7 +1701,30 @@ html, body {
                                         <span class="enquiry_mobile_number_err"></span>
                                     </div>
                                 </div>
+                                <div class="col-12 col-sm-12 col-md-6 mb-3">
+                                    <input type="date" name="preferredDate" class="form-control" required>
+                                </div>
                                 
+                                <div class="col-12 col-sm-12 col-md-6 mb-3">
+                                    <div class="custom-select-wrapper">
+                                        <div class="custom-select-trigger form-control" id="popupTimingTrigger">
+                                            <span class="custom-select-placeholder">Preferred Timing</span>
+                                            <span class="custom-select-arrow">&#8964;</span>
+                                        </div>
+                                        <div class="custom-select-dropdown" id="popupTimingDropdown">
+                                            <div class="custom-select-option" data-value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</div>
+                                            <div class="custom-select-option" data-value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</div>
+                                            <div class="custom-select-option" data-value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</div>
+                                            <div class="custom-select-option" data-value="12:00 PM - 01:00 PM">12:00 PM - 01:00 PM</div>
+                                            <div class="custom-select-option" data-value="01:00 PM - 02:00 PM">01:00 PM - 02:00 PM</div>
+                                            <div class="custom-select-option" data-value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</div>
+                                            <div class="custom-select-option" data-value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM</div>
+                                            <div class="custom-select-option" data-value="04:00 PM - 05:00 PM">04:00 PM - 05:00 PM</div>
+                                            <div class="custom-select-option" data-value="05:00 PM - 06:00 PM">05:00 PM - 06:00 PM</div>
+                                        </div>
+                                        <input type="hidden" name="preferredTime" id="popupPreferredTimeValue" required>
+                                    </div>
+                                </div>
                                 <div class="col-12 col-sm-12 col-mb-6 mb-3">
                                     <input type="text" class="form-control enquiry_comments" name="enquiry_comments" placeholder="Type Your Query" title="Type Your Query">
                                     <div class="error">
@@ -1741,5 +1874,33 @@ html, body {
     })();
   </script>
 
+<script>
+    (function () {
+      const trigger = document.getElementById("timingTrigger");
+      const dropdown = document.getElementById("timingDropdown");
+      const hiddenInput = document.getElementById("preferredTimeValue");
+      const placeholder = trigger.querySelector(".custom-select-placeholder");
+  
+      trigger.addEventListener("click", function (e) {
+        e.stopPropagation();
+        dropdown.classList.toggle("open");
+      });
+  
+      dropdown.querySelectorAll(".custom-select-option").forEach(function (opt) {
+        opt.addEventListener("click", function () {
+          const val = this.getAttribute("data-value");
+          placeholder.textContent = val;
+          hiddenInput.value = val;
+          trigger.classList.add("selected");
+          dropdown.classList.remove("open");
+        });
+      });
+  
+      // Close when clicking outside
+      document.addEventListener("click", function () {
+        dropdown.classList.remove("open");
+      });
+    })();
+  </script>
 
 </body></html>
